@@ -1,0 +1,22 @@
+{
+  "id": "S015",
+  "title": "Prohibited action recorded",
+  "kind": "negative",
+  "report_file": "PR-A015-prohibited.json",
+  "description": "SOP 4.8 prohibits reusing removed fasteners; the report records exactly that.",
+  "expected_sop_code": "SOP-ASSY-101",
+  "expected_revision": "3",
+  "expected_authority_blocked": false,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "prohibited_action",
+      "step": "4.8"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "",
+  "synthetic": true
+}

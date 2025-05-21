@@ -1,0 +1,17 @@
+{
+  "id": "S048",
+  "title": "Execution date missing from the record",
+  "kind": "ambiguous",
+  "report_file": "PR-Z048-no-date.json",
+  "description": "Without an execution date the effective-date window cannot be evaluated.",
+  "expected_sop_code": "SOP-ASSY-101",
+  "expected_revision": null,
+  "expected_authority_blocked": true,
+  "expected_escalation": true,
+  "expected_findings": [],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "",
+  "synthetic": true
+}

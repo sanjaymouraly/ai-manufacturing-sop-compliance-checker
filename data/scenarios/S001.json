@@ -1,0 +1,22 @@
+{
+  "id": "S001",
+  "title": "Clean execution against the governing revision",
+  "kind": "positive",
+  "report_file": "PR-A001-clean.json",
+  "description": "All mandatory steps recorded, all measurements inside the SOP limits.",
+  "expected_sop_code": "SOP-ASSY-101",
+  "expected_revision": "3",
+  "expected_authority_blocked": false,
+  "expected_escalation": false,
+  "expected_findings": [],
+  "forbidden_categories": [
+    "missing_step",
+    "parameter_deviation",
+    "out_of_sequence",
+    "unsupported_claim"
+  ],
+  "expect_zero_confirmed_deviations": true,
+  "expected_citation_validity": 1.0,
+  "notes": "Baseline false-positive control.",
+  "synthetic": true
+}

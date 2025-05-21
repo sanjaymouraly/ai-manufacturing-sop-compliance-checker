@@ -1,0 +1,29 @@
+{
+  "id": "S043",
+  "title": "Governing SOP is a scanned image without a text layer",
+  "kind": "ambiguous",
+  "report_file": "PR-M043-scanned-sop.json",
+  "description": "No requirements can be extracted; the system must report degraded extraction, not invent text.",
+  "expected_sop_code": "SOP-MNT-800",
+  "expected_revision": null,
+  "expected_authority_blocked": true,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "extraction_quality",
+      "classification": "insufficient_evidence"
+    },
+    {
+      "category": "conflicting_revision",
+      "classification": "sop_conflict"
+    }
+  ],
+  "forbidden_categories": [
+    "parameter_deviation",
+    "missing_step"
+  ],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "With no text layer the document states no approver, so authority cannot be established: the correct behaviour is to block and report the degraded extraction rather than audit against invented requirements.",
+  "synthetic": true
+}

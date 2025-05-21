@@ -1,0 +1,23 @@
+{
+  "id": "S013",
+  "title": "Mandatory cleaning step explicitly skipped",
+  "kind": "negative",
+  "report_file": "PR-A013-skipped.json",
+  "description": "Step 4.2 carries status 'skipped'.",
+  "expected_sop_code": "SOP-ASSY-101",
+  "expected_revision": "3",
+  "expected_authority_blocked": false,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "missing_step",
+      "step": "4.2",
+      "classification": "confirmed_deviation"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "",
+  "synthetic": true
+}

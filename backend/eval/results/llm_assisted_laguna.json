@@ -1,0 +1,1763 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-10-19T08:57:46Z",
+  "mode": "llm_assisted",
+  "scenario_count": 16,
+  "scenarios_passed": 2,
+  "pass_rate": 0.125,
+  "by_kind": {
+    "positive": {
+      "total": 2,
+      "passed": 1
+    },
+    "negative": {
+      "total": 8,
+      "passed": 1
+    },
+    "adversarial": {
+      "total": 3,
+      "passed": 0
+    },
+    "ambiguous": {
+      "total": 3,
+      "passed": 0
+    }
+  },
+  "classification_metrics": {
+    "micro": {
+      "true_positives": 16,
+      "false_positives": 25,
+      "false_negatives": 0,
+      "precision": 0.3902,
+      "recall": 1.0,
+      "f1": 0.5614
+    },
+    "macro_f1": 0.6907,
+    "per_category": {
+      "ambiguous_requirement": {
+        "true_positives": 0,
+        "false_positives": 3,
+        "false_negatives": 0,
+        "precision": 0.0,
+        "recall": 1.0,
+        "f1": 0.0
+      },
+      "contradictory_statement": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "duplicate_step": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "missing_record": {
+        "true_positives": 1,
+        "false_positives": 7,
+        "false_negatives": 0,
+        "precision": 0.125,
+        "recall": 1.0,
+        "f1": 0.2222
+      },
+      "missing_step": {
+        "true_positives": 3,
+        "false_positives": 10,
+        "false_negatives": 0,
+        "precision": 0.2308,
+        "recall": 1.0,
+        "f1": 0.375
+      },
+      "out_of_sequence": {
+        "true_positives": 1,
+        "false_positives": 1,
+        "false_negatives": 0,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6667
+      },
+      "outdated_sop": {
+        "true_positives": 2,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "parameter_deviation": {
+        "true_positives": 4,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "prohibited_action": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "unit_mismatch": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "unsupported_claim": {
+        "true_positives": 1,
+        "false_positives": 4,
+        "false_negatives": 0,
+        "precision": 0.2,
+        "recall": 1.0,
+        "f1": 0.3333
+      }
+    }
+  },
+  "step_localisation": {
+    "labelled_steps": 11,
+    "correct": 11,
+    "accuracy": 1.0
+  },
+  "version_selection": {
+    "resolvable_cases": 16,
+    "correct": 16,
+    "accuracy": 1.0,
+    "blocking_cases": 16,
+    "blocking_correct": 16,
+    "blocking_accuracy": 1.0
+  },
+  "escalation": {
+    "cases": 16,
+    "correct": 15,
+    "accuracy": 0.9375
+  },
+  "citations": {
+    "total": 156,
+    "invalid": 0,
+    "validity_rate": 1.0
+  },
+  "false_positive_control": {
+    "positive_scenarios": 2,
+    "clean": 1,
+    "clean_rate": 0.5
+  },
+  "detector_attribution": {
+    "by_detector": {
+      "deterministic": {
+        "findings": 57,
+        "by_classification": {
+          "no_detected_deviation": 41,
+          "confirmed_deviation": 13,
+          "possible_deviation": 2,
+          "insufficient_evidence": 1
+        },
+        "confirmed_deviations": 13
+      },
+      "llm": {
+        "findings": 32,
+        "by_classification": {
+          "insufficient_evidence": 32
+        },
+        "confirmed_deviations": 0
+      }
+    },
+    "llm_confirmed_deviations": 0,
+    "llm_confirmed_deviation_invariant_held": true
+  },
+  "latency_ms": {
+    "min": 4507,
+    "p50": 27511,
+    "p95": 36639,
+    "max": 50591,
+    "mean": 26959.4,
+    "total_wall_seconds": 431.43
+  },
+  "cost": {
+    "total_tokens": 48421,
+    "total_usd": 0.0
+  },
+  "scenarios": [
+    {
+      "scenario_id": "S001",
+      "title": "Clean execution against the governing revision",
+      "kind": "positive",
+      "passed": false,
+      "failures": [
+        "unexpected finding category 'unsupported_claim'",
+        "unexpected finding category 'missing_step'",
+        "forbidden category 'missing_step' was reported",
+        "forbidden category 'unsupported_claim' was reported",
+        "escalation mismatch (expected False, got True)"
+      ],
+      "expected_categories": [],
+      "predicted_categories": [
+        "missing_step",
+        "unsupported_claim"
+      ],
+      "version_selection": {
+        "expected": "3",
+        "actual": "3",
+        "expected_blocked": false,
+        "actual_blocked": false
+      },
+      "escalation": {
+        "expected": false,
+        "actual": true
+      },
+      "outcome": "human_review_required",
+      "duration_ms": 27511,
+      "citations": {
+        "total": 9,
+        "invalid": 0
+      },
+      "tokens": 3284,
+      "cost_usd": 0.0,
+      "findings": [
+        {
+          "code": "AUD-20261019-0001-F001",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.3",
+          "requirement_key": "SOP-ASSY-101:3:R003",
+          "title": "torque within specification (SOP-ASSY-101:3:R003)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0001-F002",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.4",
+          "requirement_key": "SOP-ASSY-101:3:R004",
+          "title": "length within specification (SOP-ASSY-101:3:R004)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0001-F003",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.5",
+          "requirement_key": "SOP-ASSY-101:3:R005",
+          "title": "temperature within specification (SOP-ASSY-101:3:R005)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0001-F004",
+          "category": "missing_step",
+          "classification": "insufficient_evidence",
+          "severity": "major",
+          "step": "4.8",
+          "requirement_key": "SOP-ASSY-101:3:R008",
+          "title": "Step 4.8 (no reuse of removed fasteners) not recorded in report",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        },
+        {
+          "code": "AUD-20261019-0001-F005",
+          "category": "unsupported_claim",
+          "classification": "insufficient_evidence",
+          "severity": "minor",
+          "step": null,
+          "requirement_key": null,
+          "title": "Operator note claims torque printout attached without explicit event record",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S002",
+      "title": "Mandatory measurement step omitted",
+      "kind": "negative",
+      "passed": false,
+      "failures": [
+        "unexpected finding category 'missing_record'"
+      ],
+      "expected_categories": [
+        "missing_step"
+      ],
+      "predicted_categories": [
+        "missing_record",
+        "missing_step"
+      ],
+      "version_selection": {
+        "expected": "3",
+        "actual": "3",
+        "expected_blocked": false,
+        "actual_blocked": false
+      },
+      "escalation": {
+        "expected": true,
+        "actual": true
+      },
+      "outcome": "deviations_found",
+      "duration_ms": 18960,
+      "citations": {
+        "total": 7,
+        "invalid": 0
+      },
+      "tokens": 3317,
+      "cost_usd": 0.0,
+      "findings": [
+        {
+          "code": "AUD-20261019-0002-F001",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.3",
+          "requirement_key": "SOP-ASSY-101:3:R003",
+          "title": "torque within specification (SOP-ASSY-101:3:R003)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0002-F002",
+          "category": "missing_step",
+          "classification": "confirmed_deviation",
+          "severity": "critical",
+          "step": "4.4",
+          "requirement_key": "SOP-ASSY-101:3:R004",
+          "title": "Mandatory step 4.4 not recorded",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0002-F003",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.5",
+          "requirement_key": "SOP-ASSY-101:3:R005",
+          "title": "temperature within specification (SOP-ASSY-101:3:R005)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0002-F004",
+          "category": "missing_step",
+          "classification": "insufficient_evidence",
+          "severity": "critical",
+          "step": "4.4",
+          "requirement_key": "SOP-ASSY-101:3:R004",
+          "title": "Step 4.4 (shaft end-play measurement) not present in execution record",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        },
+        {
+          "code": "AUD-20261019-0002-F005",
+          "category": "missing_record",
+          "classification": "insufficient_evidence",
+          "severity": "major",
+          "step": "4.8",
+          "requirement_key": "SOP-ASSY-101:3:R008",
+          "title": "Step 4.8 (prohibition on reusing removed fasteners) has no corresponding record entry",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S003",
+      "title": "Torque above the upper tolerance",
+      "kind": "negative",
+      "passed": true,
+      "failures": [],
+      "expected_categories": [
+        "parameter_deviation"
+      ],
+      "predicted_categories": [
+        "parameter_deviation"
+      ],
+      "version_selection": {
+        "expected": "3",
+        "actual": "3",
+        "expected_blocked": false,
+        "actual_blocked": false
+      },
+      "escalation": {
+        "expected": true,
+        "actual": true
+      },
+      "outcome": "deviations_found",
+      "duration_ms": 50591,
+      "citations": {
+        "total": 6,
+        "invalid": 0
+      },
+      "tokens": 0,
+      "cost_usd": 0.0,
+      "findings": [
+        {
+          "code": "AUD-20261019-0003-F001",
+          "category": "parameter_deviation",
+          "classification": "confirmed_deviation",
+          "severity": "critical",
+          "step": "4.3",
+          "requirement_key": "SOP-ASSY-101:3:R003",
+          "title": "torque outside SOP limits (SOP-ASSY-101:3:R003)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0003-F002",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.4",
+          "requirement_key": "SOP-ASSY-101:3:R004",
+          "title": "length within specification (SOP-ASSY-101:3:R004)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0003-F003",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.5",
+          "requirement_key": "SOP-ASSY-101:3:R005",
+          "title": "temperature within specification (SOP-ASSY-101:3:R005)",
+          "verification": "verified",
+          "detector": "deterministic"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S004",
+      "title": "Imperial torque unit inside tolerance after conversion",
+      "kind": "positive",
+      "passed": true,
+      "failures": [],
+      "expected_categories": [],
+      "predicted_categories": [],
+      "version_selection": {
+        "expected": "3",
+        "actual": "3",
+        "expected_blocked": false,
+        "actual_blocked": false
+      },
+      "escalation": {
+        "expected": false,
+        "actual": false
+      },
+      "outcome": "no_detected_deviation",
+      "duration_ms": 4507,
+      "citations": {
+        "total": 6,
+        "invalid": 0
+      },
+      "tokens": 0,
+      "cost_usd": 0.0,
+      "findings": [
+        {
+          "code": "AUD-20261019-0004-F001",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.3",
+          "requirement_key": "SOP-ASSY-101:3:R003",
+          "title": "torque within specification (SOP-ASSY-101:3:R003)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0004-F002",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.4",
+          "requirement_key": "SOP-ASSY-101:3:R004",
+          "title": "length within specification (SOP-ASSY-101:3:R004)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0004-F003",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.5",
+          "requirement_key": "SOP-ASSY-101:3:R005",
+          "title": "temperature within specification (SOP-ASSY-101:3:R005)",
+          "verification": "verified",
+          "detector": "deterministic"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S005",
+      "title": "Imperial torque below tolerance after conversion",
+      "kind": "negative",
+      "passed": false,
+      "failures": [
+        "unexpected finding category 'unsupported_claim'",
+        "unexpected finding category 'missing_record'",
+        "unexpected finding category 'missing_step'"
+      ],
+      "expected_categories": [
+        "parameter_deviation"
+      ],
+      "predicted_categories": [
+        "missing_record",
+        "missing_step",
+        "parameter_deviation",
+        "unsupported_claim"
+      ],
+      "version_selection": {
+        "expected": "3",
+        "actual": "3",
+        "expected_blocked": false,
+        "actual_blocked": false
+      },
+      "escalation": {
+        "expected": true,
+        "actual": true
+      },
+      "outcome": "deviations_found",
+      "duration_ms": 23118,
+      "citations": {
+        "total": 10,
+        "invalid": 0
+      },
+      "tokens": 3612,
+      "cost_usd": 0.0,
+      "findings": [
+        {
+          "code": "AUD-20261019-0005-F001",
+          "category": "parameter_deviation",
+          "classification": "confirmed_deviation",
+          "severity": "major",
+          "step": "4.3",
+          "requirement_key": "SOP-ASSY-101:3:R003",
+          "title": "torque outside SOP limits (SOP-ASSY-101:3:R003)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0005-F002",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.4",
+          "requirement_key": "SOP-ASSY-101:3:R004",
+          "title": "length within specification (SOP-ASSY-101:3:R004)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0005-F003",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.5",
+          "requirement_key": "SOP-ASSY-101:3:R005",
+          "title": "temperature within specification (SOP-ASSY-101:3:R005)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0005-F004",
+          "category": "missing_step",
+          "classification": "insufficient_evidence",
+          "severity": "major",
+          "step": "4.8",
+          "requirement_key": "SOP-ASSY-101:3:R008",
+          "title": "Step 4.8 (no reuse of removed fasteners) not recorded in report",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        },
+        {
+          "code": "AUD-20261019-0005-F005",
+          "category": "unsupported_claim",
+          "classification": "insufficient_evidence",
+          "severity": "major",
+          "step": "4.3",
+          "requirement_key": "SOP-ASSY-101:3:R003",
+          "title": "Torque value recorded in lbf-ft instead of N\u00b7m as specified by SOP",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        },
+        {
+          "code": "AUD-20261019-0005-F006",
+          "category": "missing_record",
+          "classification": "insufficient_evidence",
+          "severity": "minor",
+          "step": null,
+          "requirement_key": null,
+          "title": "No torque printout attached to batch file as required by SOP",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S006",
+      "title": "Incompatible measurement unit recorded",
+      "kind": "adversarial",
+      "passed": false,
+      "failures": [
+        "unexpected finding category 'missing_step'",
+        "unexpected finding category 'missing_record'"
+      ],
+      "expected_categories": [
+        "unit_mismatch"
+      ],
+      "predicted_categories": [
+        "missing_record",
+        "missing_step",
+        "unit_mismatch"
+      ],
+      "version_selection": {
+        "expected": "3",
+        "actual": "3",
+        "expected_blocked": false,
+        "actual_blocked": false
+      },
+      "escalation": {
+        "expected": true,
+        "actual": true
+      },
+      "outcome": "deviations_found",
+      "duration_ms": 22985,
+      "citations": {
+        "total": 8,
+        "invalid": 0
+      },
+      "tokens": 3192,
+      "cost_usd": 0.0,
+      "findings": [
+        {
+          "code": "AUD-20261019-0006-F001",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.3",
+          "requirement_key": "SOP-ASSY-101:3:R003",
+          "title": "torque within specification (SOP-ASSY-101:3:R003)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0006-F002",
+          "category": "unit_mismatch",
+          "classification": "possible_deviation",
+          "severity": "major",
+          "step": "4.4",
+          "requirement_key": "SOP-ASSY-101:3:R004",
+          "title": "Unit mismatch for length",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0006-F003",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.5",
+          "requirement_key": "SOP-ASSY-101:3:R005",
+          "title": "temperature within specification (SOP-ASSY-101:3:R005)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0006-F004",
+          "category": "missing_step",
+          "classification": "insufficient_evidence",
+          "severity": "major",
+          "step": "4.8",
+          "requirement_key": "SOP-ASSY-101:3:R008",
+          "title": "Step 4.8 not executed or recorded in process report",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        },
+        {
+          "code": "AUD-20261019-0006-F005",
+          "category": "missing_record",
+          "classification": "insufficient_evidence",
+          "severity": "minor",
+          "step": null,
+          "requirement_key": null,
+          "title": "Torque printout not attached to batch file as required by SOP section 5",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S007",
+      "title": "Serial-number labelling performed before torqueing",
+      "kind": "negative",
+      "passed": false,
+      "failures": [
+        "unexpected finding category 'missing_step'"
+      ],
+      "expected_categories": [
+        "out_of_sequence"
+      ],
+      "predicted_categories": [
+        "missing_step",
+        "out_of_sequence"
+      ],
+      "version_selection": {
+        "expected": "3",
+        "actual": "3",
+        "expected_blocked": false,
+        "actual_blocked": false
+      },
+      "escalation": {
+        "expected": true,
+        "actual": true
+      },
+      "outcome": "deviations_found",
+      "duration_ms": 17770,
+      "citations": {
+        "total": 11,
+        "invalid": 0
+      },
+      "tokens": 2866,
+      "cost_usd": 0.0,
+      "findings": [
+        {
+          "code": "AUD-20261019-0007-F001",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.3",
+          "requirement_key": "SOP-ASSY-101:3:R003",
+          "title": "torque within specification (SOP-ASSY-101:3:R003)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0007-F002",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.4",
+          "requirement_key": "SOP-ASSY-101:3:R004",
+          "title": "length within specification (SOP-ASSY-101:3:R004)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0007-F003",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.5",
+          "requirement_key": "SOP-ASSY-101:3:R005",
+          "title": "temperature within specification (SOP-ASSY-101:3:R005)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0007-F004",
+          "category": "out_of_sequence",
+          "classification": "confirmed_deviation",
+          "severity": "major",
+          "step": "4.7",
+          "requirement_key": "SOP-ASSY-101:3:R007",
+          "title": "Steps executed out of sequence: 4.7 before 4.1",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0007-F005",
+          "category": "missing_step",
+          "classification": "insufficient_evidence",
+          "severity": "major",
+          "step": "4.8",
+          "requirement_key": "SOP-ASSY-101:3:R008",
+          "title": "Step 4.8 (no reuse of removed fasteners) not recorded in report",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S008",
+      "title": "Same step recorded twice with identical values",
+      "kind": "ambiguous",
+      "passed": false,
+      "failures": [
+        "unexpected finding category 'missing_record'"
+      ],
+      "expected_categories": [
+        "duplicate_step"
+      ],
+      "predicted_categories": [
+        "duplicate_step",
+        "missing_record"
+      ],
+      "version_selection": {
+        "expected": "3",
+        "actual": "3",
+        "expected_blocked": false,
+        "actual_blocked": false
+      },
+      "escalation": {
+        "expected": false,
+        "actual": false
+      },
+      "outcome": "deviations_found",
+      "duration_ms": 33462,
+      "citations": {
+        "total": 14,
+        "invalid": 0
+      },
+      "tokens": 3890,
+      "cost_usd": 0.0,
+      "findings": [
+        {
+          "code": "AUD-20261019-0008-F001",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.3",
+          "requirement_key": "SOP-ASSY-101:3:R003",
+          "title": "torque within specification (SOP-ASSY-101:3:R003)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0008-F002",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.4",
+          "requirement_key": "SOP-ASSY-101:3:R004",
+          "title": "length within specification (SOP-ASSY-101:3:R004)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0008-F003",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.5",
+          "requirement_key": "SOP-ASSY-101:3:R005",
+          "title": "temperature within specification (SOP-ASSY-101:3:R005)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0008-F004",
+          "category": "duplicate_step",
+          "classification": "possible_deviation",
+          "severity": "minor",
+          "step": "4.3",
+          "requirement_key": "SOP-ASSY-101:3:R003",
+          "title": "Step 4.3 recorded more than once",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0008-F005",
+          "category": "missing_record",
+          "classification": "insufficient_evidence",
+          "severity": "minor",
+          "step": "4.3",
+          "requirement_key": "SOP-ASSY-101:3:R003",
+          "title": "Step 4.3 torque value recorded but star-pattern sequence not documented",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        },
+        {
+          "code": "AUD-20261019-0008-F006",
+          "category": "missing_record",
+          "classification": "insufficient_evidence",
+          "severity": "minor",
+          "step": "4.4",
+          "requirement_key": "SOP-ASSY-101:3:R004",
+          "title": "Step 4.4 parameter labeled as 'clearance' instead of 'end-play'",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        },
+        {
+          "code": "AUD-20261019-0008-F007",
+          "category": "missing_record",
+          "classification": "insufficient_evidence",
+          "severity": "minor",
+          "step": "4.5",
+          "requirement_key": "SOP-ASSY-101:3:R005",
+          "title": "Step 4.5 temperature unit recorded as 'C' instead of '\u00b0C'",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S009",
+      "title": "Two different torque measurements for the same step",
+      "kind": "ambiguous",
+      "passed": false,
+      "failures": [
+        "unexpected finding category 'missing_step'",
+        "unexpected finding category 'missing_record'"
+      ],
+      "expected_categories": [
+        "contradictory_statement"
+      ],
+      "predicted_categories": [
+        "contradictory_statement",
+        "missing_record",
+        "missing_step"
+      ],
+      "version_selection": {
+        "expected": "3",
+        "actual": "3",
+        "expected_blocked": false,
+        "actual_blocked": false
+      },
+      "escalation": {
+        "expected": true,
+        "actual": true
+      },
+      "outcome": "deviations_found",
+      "duration_ms": 29045,
+      "citations": {
+        "total": 12,
+        "invalid": 0
+      },
+      "tokens": 3729,
+      "cost_usd": 0.0,
+      "findings": [
+        {
+          "code": "AUD-20261019-0009-F001",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.3",
+          "requirement_key": "SOP-ASSY-101:3:R003",
+          "title": "torque within specification (SOP-ASSY-101:3:R003)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0009-F002",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.4",
+          "requirement_key": "SOP-ASSY-101:3:R004",
+          "title": "length within specification (SOP-ASSY-101:3:R004)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0009-F003",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.5",
+          "requirement_key": "SOP-ASSY-101:3:R005",
+          "title": "temperature within specification (SOP-ASSY-101:3:R005)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0009-F004",
+          "category": "contradictory_statement",
+          "classification": "confirmed_deviation",
+          "severity": "major",
+          "step": "4.3",
+          "requirement_key": "SOP-ASSY-101:3:R003",
+          "title": "Conflicting measurements recorded for 4.3",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0009-F005",
+          "category": "contradictory_statement",
+          "classification": "insufficient_evidence",
+          "severity": "major",
+          "step": "4.3",
+          "requirement_key": "SOP-ASSY-101:3:R003",
+          "title": "Duplicate step 4.3 torque entries with conflicting values",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        },
+        {
+          "code": "AUD-20261019-0009-F006",
+          "category": "missing_record",
+          "classification": "insufficient_evidence",
+          "severity": "minor",
+          "step": "4.4",
+          "requirement_key": "SOP-ASSY-101:3:R004",
+          "title": "Step 4.4 parameter labeled as 'clearance' instead of 'length'",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        },
+        {
+          "code": "AUD-20261019-0009-F007",
+          "category": "missing_step",
+          "classification": "insufficient_evidence",
+          "severity": "info",
+          "step": null,
+          "requirement_key": null,
+          "title": "No torque printout attachment referenced in records",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S010",
+      "title": "Blanket completion claim contradicted by the record",
+      "kind": "adversarial",
+      "passed": false,
+      "failures": [
+        "unexpected finding category 'ambiguous_requirement'"
+      ],
+      "expected_categories": [
+        "missing_step",
+        "unsupported_claim"
+      ],
+      "predicted_categories": [
+        "ambiguous_requirement",
+        "missing_step",
+        "unsupported_claim"
+      ],
+      "version_selection": {
+        "expected": "3",
+        "actual": "3",
+        "expected_blocked": false,
+        "actual_blocked": false
+      },
+      "escalation": {
+        "expected": true,
+        "actual": true
+      },
+      "outcome": "deviations_found",
+      "duration_ms": 33871,
+      "citations": {
+        "total": 8,
+        "invalid": 0
+      },
+      "tokens": 3709,
+      "cost_usd": 0.0,
+      "findings": [
+        {
+          "code": "AUD-20261019-0010-F001",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.3",
+          "requirement_key": "SOP-ASSY-101:3:R003",
+          "title": "torque within specification (SOP-ASSY-101:3:R003)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0010-F002",
+          "category": "missing_step",
+          "classification": "confirmed_deviation",
+          "severity": "critical",
+          "step": "4.4",
+          "requirement_key": "SOP-ASSY-101:3:R004",
+          "title": "Mandatory step 4.4 not recorded",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0010-F003",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.5",
+          "requirement_key": "SOP-ASSY-101:3:R005",
+          "title": "temperature within specification (SOP-ASSY-101:3:R005)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0010-F004",
+          "category": "unsupported_claim",
+          "classification": "confirmed_deviation",
+          "severity": "major",
+          "step": null,
+          "requirement_key": null,
+          "title": "Completion claim not supported by the recorded evidence",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0010-F005",
+          "category": "missing_step",
+          "classification": "insufficient_evidence",
+          "severity": "critical",
+          "step": "4.4",
+          "requirement_key": "SOP-ASSY-101:3:R004",
+          "title": "Step 4.4 (shaft end-play measurement) absent from execution record",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        },
+        {
+          "code": "AUD-20261019-0010-F006",
+          "category": "ambiguous_requirement",
+          "classification": "insufficient_evidence",
+          "severity": "minor",
+          "step": "4.3",
+          "requirement_key": "SOP-ASSY-101:3:R003",
+          "title": "Step 4.3 torque value recorded without explicit star-pattern confirmation",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S011",
+      "title": "Execution recorded against a superseded revision",
+      "kind": "negative",
+      "passed": false,
+      "failures": [
+        "unexpected finding category 'missing_record'",
+        "unexpected finding category 'missing_step'"
+      ],
+      "expected_categories": [
+        "outdated_sop",
+        "parameter_deviation"
+      ],
+      "predicted_categories": [
+        "missing_record",
+        "missing_step",
+        "outdated_sop",
+        "parameter_deviation"
+      ],
+      "version_selection": {
+        "expected": "3",
+        "actual": "3",
+        "expected_blocked": false,
+        "actual_blocked": false
+      },
+      "escalation": {
+        "expected": true,
+        "actual": true
+      },
+      "outcome": "deviations_found",
+      "duration_ms": 20718,
+      "citations": {
+        "total": 9,
+        "invalid": 0
+      },
+      "tokens": 3293,
+      "cost_usd": 0.0,
+      "findings": [
+        {
+          "code": "AUD-20261019-0011-F001",
+          "category": "parameter_deviation",
+          "classification": "confirmed_deviation",
+          "severity": "major",
+          "step": "4.3",
+          "requirement_key": "SOP-ASSY-101:3:R003",
+          "title": "torque outside SOP limits (SOP-ASSY-101:3:R003)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0011-F002",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.4",
+          "requirement_key": "SOP-ASSY-101:3:R004",
+          "title": "length within specification (SOP-ASSY-101:3:R004)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0011-F003",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.5",
+          "requirement_key": "SOP-ASSY-101:3:R005",
+          "title": "temperature within specification (SOP-ASSY-101:3:R005)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0011-F004",
+          "category": "outdated_sop",
+          "classification": "confirmed_deviation",
+          "severity": "critical",
+          "step": null,
+          "requirement_key": null,
+          "title": "Execution recorded against non-governing revision 2",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0011-F005",
+          "category": "missing_step",
+          "classification": "insufficient_evidence",
+          "severity": "major",
+          "step": "4.8",
+          "requirement_key": "SOP-ASSY-101:3:R008",
+          "title": "Step 4.8 (no reuse of removed fasteners) not recorded in report",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        },
+        {
+          "code": "AUD-20261019-0011-F006",
+          "category": "missing_record",
+          "classification": "insufficient_evidence",
+          "severity": "minor",
+          "step": null,
+          "requirement_key": null,
+          "title": "No torque printout attached to batch file as required by SOP section 5",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S012",
+      "title": "Report cites a revision that is not in the library",
+      "kind": "adversarial",
+      "passed": false,
+      "failures": [
+        "unexpected finding category 'unsupported_claim'",
+        "unexpected finding category 'missing_record'",
+        "unexpected finding category 'missing_step'"
+      ],
+      "expected_categories": [
+        "outdated_sop"
+      ],
+      "predicted_categories": [
+        "missing_record",
+        "missing_step",
+        "outdated_sop",
+        "unsupported_claim"
+      ],
+      "version_selection": {
+        "expected": "3",
+        "actual": "3",
+        "expected_blocked": false,
+        "actual_blocked": false
+      },
+      "escalation": {
+        "expected": true,
+        "actual": true
+      },
+      "outcome": "deviations_found",
+      "duration_ms": 35340,
+      "citations": {
+        "total": 11,
+        "invalid": 0
+      },
+      "tokens": 3677,
+      "cost_usd": 0.0,
+      "findings": [
+        {
+          "code": "AUD-20261019-0012-F001",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.3",
+          "requirement_key": "SOP-ASSY-101:3:R003",
+          "title": "torque within specification (SOP-ASSY-101:3:R003)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0012-F002",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.4",
+          "requirement_key": "SOP-ASSY-101:3:R004",
+          "title": "length within specification (SOP-ASSY-101:3:R004)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0012-F003",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.5",
+          "requirement_key": "SOP-ASSY-101:3:R005",
+          "title": "temperature within specification (SOP-ASSY-101:3:R005)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0012-F004",
+          "category": "outdated_sop",
+          "classification": "confirmed_deviation",
+          "severity": "major",
+          "step": null,
+          "requirement_key": null,
+          "title": "Report cites revision '9', which is not registered",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0012-F005",
+          "category": "missing_step",
+          "classification": "insufficient_evidence",
+          "severity": "major",
+          "step": "4.8",
+          "requirement_key": "SOP-ASSY-101:3:R008",
+          "title": "Step 4.8 (no reuse of removed fasteners) not present in report",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        },
+        {
+          "code": "AUD-20261019-0012-F006",
+          "category": "unsupported_claim",
+          "classification": "insufficient_evidence",
+          "severity": "minor",
+          "step": "4.3",
+          "requirement_key": "SOP-ASSY-101:3:R003",
+          "title": "Step 4.3 torque value recorded without star pattern verification",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        },
+        {
+          "code": "AUD-20261019-0012-F007",
+          "category": "missing_record",
+          "classification": "insufficient_evidence",
+          "severity": "minor",
+          "step": null,
+          "requirement_key": null,
+          "title": "No torque printout attached despite SOP record requirement",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S013",
+      "title": "Mandatory cleaning step explicitly skipped",
+      "kind": "negative",
+      "passed": false,
+      "failures": [
+        "unexpected finding category 'ambiguous_requirement'"
+      ],
+      "expected_categories": [
+        "missing_step"
+      ],
+      "predicted_categories": [
+        "ambiguous_requirement",
+        "missing_step"
+      ],
+      "version_selection": {
+        "expected": "3",
+        "actual": "3",
+        "expected_blocked": false,
+        "actual_blocked": false
+      },
+      "escalation": {
+        "expected": true,
+        "actual": true
+      },
+      "outcome": "deviations_found",
+      "duration_ms": 26935,
+      "citations": {
+        "total": 11,
+        "invalid": 0
+      },
+      "tokens": 3291,
+      "cost_usd": 0.0,
+      "findings": [
+        {
+          "code": "AUD-20261019-0013-F001",
+          "category": "missing_step",
+          "classification": "confirmed_deviation",
+          "severity": "critical",
+          "step": "4.2",
+          "requirement_key": "SOP-ASSY-101:3:R002",
+          "title": "Mandatory step 4.2 recorded as skipped",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0013-F002",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.3",
+          "requirement_key": "SOP-ASSY-101:3:R003",
+          "title": "torque within specification (SOP-ASSY-101:3:R003)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0013-F003",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.4",
+          "requirement_key": "SOP-ASSY-101:3:R004",
+          "title": "length within specification (SOP-ASSY-101:3:R004)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0013-F004",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.5",
+          "requirement_key": "SOP-ASSY-101:3:R005",
+          "title": "temperature within specification (SOP-ASSY-101:3:R005)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0013-F005",
+          "category": "missing_step",
+          "classification": "insufficient_evidence",
+          "severity": "major",
+          "step": "4.8",
+          "requirement_key": "SOP-ASSY-101:3:R008",
+          "title": "Step 4.8 (no reuse of removed fasteners) not recorded in report",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        },
+        {
+          "code": "AUD-20261019-0013-F006",
+          "category": "ambiguous_requirement",
+          "classification": "insufficient_evidence",
+          "severity": "minor",
+          "step": "4.4",
+          "requirement_key": "SOP-ASSY-101:3:R004",
+          "title": "Step 4.4 parameter name mismatch between SOP and report",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S014",
+      "title": "Step recorded as failed",
+      "kind": "negative",
+      "passed": false,
+      "failures": [
+        "unexpected finding category 'missing_step'",
+        "unexpected finding category 'ambiguous_requirement'"
+      ],
+      "expected_categories": [
+        "parameter_deviation"
+      ],
+      "predicted_categories": [
+        "ambiguous_requirement",
+        "missing_step",
+        "parameter_deviation"
+      ],
+      "version_selection": {
+        "expected": "3",
+        "actual": "3",
+        "expected_blocked": false,
+        "actual_blocked": false
+      },
+      "escalation": {
+        "expected": true,
+        "actual": true
+      },
+      "outcome": "deviations_found",
+      "duration_ms": 21996,
+      "citations": {
+        "total": 11,
+        "invalid": 0
+      },
+      "tokens": 3250,
+      "cost_usd": 0.0,
+      "findings": [
+        {
+          "code": "AUD-20261019-0014-F001",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.3",
+          "requirement_key": "SOP-ASSY-101:3:R003",
+          "title": "torque within specification (SOP-ASSY-101:3:R003)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0014-F002",
+          "category": "parameter_deviation",
+          "classification": "confirmed_deviation",
+          "severity": "critical",
+          "step": "4.4",
+          "requirement_key": "SOP-ASSY-101:3:R004",
+          "title": "Step 4.4 recorded as failed",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0014-F003",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.4",
+          "requirement_key": "SOP-ASSY-101:3:R004",
+          "title": "length within specification (SOP-ASSY-101:3:R004)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0014-F004",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.5",
+          "requirement_key": "SOP-ASSY-101:3:R005",
+          "title": "temperature within specification (SOP-ASSY-101:3:R005)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0014-F005",
+          "category": "missing_step",
+          "classification": "insufficient_evidence",
+          "severity": "major",
+          "step": "4.8",
+          "requirement_key": "SOP-ASSY-101:3:R008",
+          "title": "Step 4.8 (no reuse of removed fasteners) not recorded in report",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        },
+        {
+          "code": "AUD-20261019-0014-F006",
+          "category": "ambiguous_requirement",
+          "classification": "insufficient_evidence",
+          "severity": "minor",
+          "step": "4.4",
+          "requirement_key": "SOP-ASSY-101:3:R004",
+          "title": "Step 4.4 parameter name mismatch between SOP and report",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S015",
+      "title": "Prohibited action recorded",
+      "kind": "negative",
+      "passed": false,
+      "failures": [
+        "unexpected finding category 'missing_step'",
+        "unexpected finding category 'out_of_sequence'"
+      ],
+      "expected_categories": [
+        "prohibited_action"
+      ],
+      "predicted_categories": [
+        "missing_step",
+        "out_of_sequence",
+        "prohibited_action"
+      ],
+      "version_selection": {
+        "expected": "3",
+        "actual": "3",
+        "expected_blocked": false,
+        "actual_blocked": false
+      },
+      "escalation": {
+        "expected": true,
+        "actual": true
+      },
+      "outcome": "deviations_found",
+      "duration_ms": 36639,
+      "citations": {
+        "total": 11,
+        "invalid": 0
+      },
+      "tokens": 3504,
+      "cost_usd": 0.0,
+      "findings": [
+        {
+          "code": "AUD-20261019-0015-F001",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.3",
+          "requirement_key": "SOP-ASSY-101:3:R003",
+          "title": "torque within specification (SOP-ASSY-101:3:R003)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0015-F002",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.4",
+          "requirement_key": "SOP-ASSY-101:3:R004",
+          "title": "length within specification (SOP-ASSY-101:3:R004)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0015-F003",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.5",
+          "requirement_key": "SOP-ASSY-101:3:R005",
+          "title": "temperature within specification (SOP-ASSY-101:3:R005)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0015-F004",
+          "category": "prohibited_action",
+          "classification": "confirmed_deviation",
+          "severity": "critical",
+          "step": "4.8",
+          "requirement_key": "SOP-ASSY-101:3:R008",
+          "title": "Prohibited action recorded against step 4.8",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0015-F005",
+          "category": "missing_step",
+          "classification": "insufficient_evidence",
+          "severity": "major",
+          "step": "4.8",
+          "requirement_key": "SOP-ASSY-101:3:R008",
+          "title": "Step 4.8 not executed in the process report",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        },
+        {
+          "code": "AUD-20261019-0015-F006",
+          "category": "out_of_sequence",
+          "classification": "insufficient_evidence",
+          "severity": "critical",
+          "step": "4.8",
+          "requirement_key": "SOP-ASSY-101:3:R008",
+          "title": "Step 4.9 appears in the process report but is not defined in the SOP",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S016",
+      "title": "Required measurement performed but no value recorded",
+      "kind": "ambiguous",
+      "passed": false,
+      "failures": [
+        "unexpected finding category 'unsupported_claim'",
+        "unexpected finding category 'missing_step'"
+      ],
+      "expected_categories": [
+        "missing_record"
+      ],
+      "predicted_categories": [
+        "missing_record",
+        "missing_step",
+        "unsupported_claim"
+      ],
+      "version_selection": {
+        "expected": "3",
+        "actual": "3",
+        "expected_blocked": false,
+        "actual_blocked": false
+      },
+      "escalation": {
+        "expected": true,
+        "actual": true
+      },
+      "outcome": "human_review_required",
+      "duration_ms": 27902,
+      "citations": {
+        "total": 12,
+        "invalid": 0
+      },
+      "tokens": 3807,
+      "cost_usd": 0.0,
+      "findings": [
+        {
+          "code": "AUD-20261019-0016-F001",
+          "category": "missing_record",
+          "classification": "insufficient_evidence",
+          "severity": "major",
+          "step": "4.3",
+          "requirement_key": "SOP-ASSY-101:3:R003",
+          "title": "No measured value recorded for torque",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0016-F002",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.4",
+          "requirement_key": "SOP-ASSY-101:3:R004",
+          "title": "length within specification (SOP-ASSY-101:3:R004)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0016-F003",
+          "category": "compliant_observation",
+          "classification": "no_detected_deviation",
+          "severity": "info",
+          "step": "4.5",
+          "requirement_key": "SOP-ASSY-101:3:R005",
+          "title": "temperature within specification (SOP-ASSY-101:3:R005)",
+          "verification": "verified",
+          "detector": "deterministic"
+        },
+        {
+          "code": "AUD-20261019-0016-F004",
+          "category": "missing_step",
+          "classification": "insufficient_evidence",
+          "severity": "major",
+          "step": "4.8",
+          "requirement_key": "SOP-ASSY-101:3:R008",
+          "title": "Step 4.8 (no reuse of removed fasteners) not recorded in report",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        },
+        {
+          "code": "AUD-20261019-0016-F005",
+          "category": "missing_record",
+          "classification": "insufficient_evidence",
+          "severity": "minor",
+          "step": "4.3",
+          "requirement_key": "SOP-ASSY-101:3:R003",
+          "title": "No torque value recorded despite step 4.3 completion",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        },
+        {
+          "code": "AUD-20261019-0016-F006",
+          "category": "unsupported_claim",
+          "classification": "insufficient_evidence",
+          "severity": "minor",
+          "step": "4.6",
+          "requirement_key": "SOP-ASSY-101:3:R006",
+          "title": "Step 4.6 marked not_applicable without explicit corrosion inspection evidence",
+          "verification": "invalid_citation",
+          "detector": "llm"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "S024",
+  "title": "Net weight not recorded",
+  "kind": "negative",
+  "report_file": "PR-P024-missing-weight.json",
+  "description": "Weight step present without a value.",
+  "expected_sop_code": "SOP-PKG-220",
+  "expected_revision": "A",
+  "expected_authority_blocked": false,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "missing_record",
+      "step": "4.4"
+    },
+    {
+      "category": "conflicting_revision",
+      "classification": "sop_conflict"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "The unresolved A/B conflict applies to this audit as well.",
+  "synthetic": true
+}

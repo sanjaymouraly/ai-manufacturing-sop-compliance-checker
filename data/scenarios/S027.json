@@ -1,0 +1,22 @@
+{
+  "id": "S027",
+  "title": "Lubricant level below the minimum",
+  "kind": "negative",
+  "report_file": "PR-E027-lubricant-low.json",
+  "description": "45 % against a minimum of 60 %.",
+  "expected_sop_code": "SOP-EQP-310",
+  "expected_revision": "4",
+  "expected_authority_blocked": false,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "parameter_deviation",
+      "step": "4.5"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "",
+  "synthetic": true
+}

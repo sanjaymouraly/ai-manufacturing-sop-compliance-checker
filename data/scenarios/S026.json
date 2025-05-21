@@ -1,0 +1,22 @@
+{
+  "id": "S026",
+  "title": "Hydraulic pressure above the allowed range",
+  "kind": "negative",
+  "report_file": "PR-E026-pressure-high.json",
+  "description": "150 bar against a 120–140 bar requirement.",
+  "expected_sop_code": "SOP-EQP-310",
+  "expected_revision": "4",
+  "expected_authority_blocked": false,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "parameter_deviation",
+      "step": "4.3"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "",
+  "synthetic": true
+}

@@ -1,0 +1,17 @@
+{
+  "id": "S018",
+  "title": "Execution date has no approved revision in force",
+  "kind": "adversarial",
+  "report_file": "PR-A018-no-revision-in-force.json",
+  "description": "Executed 2024-08-01; revision 3 was not yet effective and earlier revisions are superseded.",
+  "expected_sop_code": "SOP-ASSY-101",
+  "expected_revision": null,
+  "expected_authority_blocked": true,
+  "expected_escalation": true,
+  "expected_findings": [],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "Must block rather than silently fall back to the newest document.",
+  "synthetic": true
+}

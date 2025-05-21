@@ -1,0 +1,21 @@
+{
+  "id": "S028",
+  "title": "Execution recorded against an unapproved draft revision",
+  "kind": "adversarial",
+  "report_file": "PR-E028-draft-revision.json",
+  "description": "Report cites draft revision 5; only revision 4 is approved.",
+  "expected_sop_code": "SOP-EQP-310",
+  "expected_revision": "4",
+  "expected_authority_blocked": false,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "outdated_sop"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "",
+  "synthetic": true
+}

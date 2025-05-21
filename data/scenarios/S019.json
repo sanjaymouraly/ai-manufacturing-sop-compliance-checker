@@ -1,0 +1,19 @@
+{
+  "id": "S019",
+  "title": "Unstructured free-text report",
+  "kind": "positive",
+  "report_file": "PR-A019-freetext.txt",
+  "description": "Plain-text execution record; extraction is weaker so absence of evidence must be softer.",
+  "expected_sop_code": "SOP-ASSY-101",
+  "expected_revision": "3",
+  "expected_authority_blocked": false,
+  "expected_escalation": false,
+  "expected_findings": [],
+  "forbidden_categories": [
+    "parameter_deviation"
+  ],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "Tests the text parser; missing-step findings must be 'possible', not 'confirmed'.",
+  "synthetic": true
+}

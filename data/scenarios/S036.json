@@ -1,0 +1,22 @@
+{
+  "id": "S036",
+  "title": "Backlash outside tolerance while the SOP was valid",
+  "kind": "negative",
+  "report_file": "PR-G036-in-force.json",
+  "description": "Executed inside the validity window; backlash 0.15 mm exceeds the 0.08–0.12 mm range.",
+  "expected_sop_code": "SOP-ASSY-105",
+  "expected_revision": "1",
+  "expected_authority_blocked": false,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "parameter_deviation",
+      "step": "4.4"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "",
+  "synthetic": true
+}

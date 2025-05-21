@@ -1,0 +1,22 @@
+{
+  "id": "S042",
+  "title": "Compliant with one SOP, contradicted by another applicable SOP",
+  "kind": "adversarial",
+  "report_file": "PR-W042-crossdoc.json",
+  "description": "130 °C satisfies SOP-WLD-700 (≥120 °C) but violates SOP-EQP-315 (≤100 °C).",
+  "expected_sop_code": "SOP-WLD-700",
+  "expected_revision": "1",
+  "expected_authority_blocked": false,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "conflicting_revision",
+      "classification": "sop_conflict"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "Requires a library-level cross-document conflict scan.",
+  "synthetic": true
+}

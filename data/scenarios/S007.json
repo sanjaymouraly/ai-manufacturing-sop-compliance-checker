@@ -1,0 +1,21 @@
+{
+  "id": "S007",
+  "title": "Serial-number labelling performed before torqueing",
+  "kind": "negative",
+  "report_file": "PR-A007-out-of-sequence.json",
+  "description": "Step 4.7 recorded before step 4.3, inverting the SOP sequence.",
+  "expected_sop_code": "SOP-ASSY-101",
+  "expected_revision": "3",
+  "expected_authority_blocked": false,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "out_of_sequence"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "",
+  "synthetic": true
+}

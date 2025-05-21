@@ -1,0 +1,21 @@
+{
+  "id": "S009",
+  "title": "Two different torque measurements for the same step",
+  "kind": "ambiguous",
+  "report_file": "PR-A009-conflicting-values.json",
+  "description": "Internally inconsistent record: 12.2 N·m and 11.1 N·m for step 4.3.",
+  "expected_sop_code": "SOP-ASSY-101",
+  "expected_revision": "3",
+  "expected_authority_blocked": false,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "contradictory_statement"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "",
+  "synthetic": true
+}

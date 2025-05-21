@@ -1,0 +1,22 @@
+{
+  "id": "S017",
+  "title": "Record-keeping attributes missing",
+  "kind": "ambiguous",
+  "report_file": "PR-A017-incomplete-record.json",
+  "description": "Step 4.1 requires a recorded operator ID; operator and timestamp are absent.",
+  "expected_sop_code": "SOP-ASSY-101",
+  "expected_revision": "3",
+  "expected_authority_blocked": false,
+  "expected_escalation": false,
+  "expected_findings": [
+    {
+      "category": "missing_record",
+      "step": "4.1"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "",
+  "synthetic": true
+}

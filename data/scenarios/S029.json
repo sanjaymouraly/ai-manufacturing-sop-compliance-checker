@@ -1,0 +1,23 @@
+{
+  "id": "S029",
+  "title": "Conditional action triggered but not evidenced",
+  "kind": "ambiguous",
+  "report_file": "PR-E029-conditional-not-followed.json",
+  "description": "A die crack was found but no tag-out/maintenance request is recorded.",
+  "expected_sop_code": "SOP-EQP-310",
+  "expected_revision": "4",
+  "expected_authority_blocked": false,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "missing_step",
+      "step": "4.6",
+      "classification": "possible_deviation"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "The engine can see that the trigger condition occurred, so the unevidenced tag-out is a material possible deviation and must reach a reviewer.",
+  "synthetic": true
+}

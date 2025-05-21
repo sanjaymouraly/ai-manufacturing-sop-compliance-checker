@@ -1,0 +1,22 @@
+{
+  "id": "S006",
+  "title": "Incompatible measurement unit recorded",
+  "kind": "adversarial",
+  "report_file": "PR-A006-unit-mismatch.json",
+  "description": "End-play recorded in kg where the SOP requires mm; must not be silently coerced.",
+  "expected_sop_code": "SOP-ASSY-101",
+  "expected_revision": "3",
+  "expected_authority_blocked": false,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "unit_mismatch",
+      "step": "4.4"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "",
+  "synthetic": true
+}

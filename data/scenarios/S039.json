@@ -1,0 +1,22 @@
+{
+  "id": "S039",
+  "title": "Sample dimension outside tolerance",
+  "kind": "negative",
+  "report_file": "PR-Q039-dimension-out.json",
+  "description": "25.5 mm against 25.0 mm ± 0.3 mm.",
+  "expected_sop_code": "SOP-QCI-610",
+  "expected_revision": "2",
+  "expected_authority_blocked": false,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "parameter_deviation",
+      "step": "4.4"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "",
+  "synthetic": true
+}

@@ -1,0 +1,26 @@
+{
+  "id": "S033",
+  "title": "pH outside the governing revision's window",
+  "kind": "negative",
+  "report_file": "PR-B033-ph-out.json",
+  "description": "pH 7.5 against revision 2's 6.8–7.4 window.",
+  "expected_sop_code": "SOP-BAT-440",
+  "expected_revision": "2",
+  "expected_authority_blocked": false,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "parameter_deviation",
+      "step": "4.4"
+    },
+    {
+      "category": "conflicting_revision",
+      "classification": "sop_conflict"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "Revisions 2 and 3 disagree on the pH window, so the conflict is reported alongside the measured deviation.",
+  "synthetic": true
+}

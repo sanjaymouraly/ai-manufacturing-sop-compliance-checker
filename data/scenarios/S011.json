@@ -1,0 +1,26 @@
+{
+  "id": "S011",
+  "title": "Execution recorded against a superseded revision",
+  "kind": "negative",
+  "report_file": "PR-A011-superseded-revision.json",
+  "description": "Report cites revision 2 (superseded); revision 3 governs and tightened the torque window.",
+  "expected_sop_code": "SOP-ASSY-101",
+  "expected_revision": "3",
+  "expected_authority_blocked": false,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "outdated_sop",
+      "classification": "confirmed_deviation"
+    },
+    {
+      "category": "parameter_deviation",
+      "step": "4.3"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "10.4 N·m was valid under revision 2 but is out of tolerance under revision 3.",
+  "synthetic": true
+}

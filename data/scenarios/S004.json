@@ -1,0 +1,20 @@
+{
+  "id": "S004",
+  "title": "Imperial torque unit inside tolerance after conversion",
+  "kind": "positive",
+  "report_file": "PR-A004-torque-imperial-ok.json",
+  "description": "9.0 lbf-ft = 12.20 N·m, inside 11–13 N·m. Must NOT be flagged.",
+  "expected_sop_code": "SOP-ASSY-101",
+  "expected_revision": "3",
+  "expected_authority_blocked": false,
+  "expected_escalation": false,
+  "expected_findings": [],
+  "forbidden_categories": [
+    "parameter_deviation",
+    "unit_mismatch"
+  ],
+  "expect_zero_confirmed_deviations": true,
+  "expected_citation_validity": 1.0,
+  "notes": "Unit-conversion false-positive control.",
+  "synthetic": true
+}

@@ -1,0 +1,8 @@
+-r requirements.txt
+
+# Test, lint and type-check tooling.
+pytest==9.0.3
+pytest-asyncio==1.4.0
+pytest-cov==7.1.0
+ruff==0.17.1
+mypy==2.4.0

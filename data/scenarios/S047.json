@@ -1,0 +1,17 @@
+{
+  "id": "S047",
+  "title": "Report references an SOP that is not in the library",
+  "kind": "adversarial",
+  "report_file": "PR-Z047-unknown-sop.json",
+  "description": "No applicable document exists, so no compliance conclusion is possible.",
+  "expected_sop_code": "SOP-XXX-999",
+  "expected_revision": null,
+  "expected_authority_blocked": true,
+  "expected_escalation": true,
+  "expected_findings": [],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "",
+  "synthetic": true
+}

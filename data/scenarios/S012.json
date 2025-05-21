@@ -1,0 +1,21 @@
+{
+  "id": "S012",
+  "title": "Report cites a revision that is not in the library",
+  "kind": "adversarial",
+  "report_file": "PR-A012-unknown-revision.json",
+  "description": "Revision 9 does not exist; the instructions actually used cannot be verified.",
+  "expected_sop_code": "SOP-ASSY-101",
+  "expected_revision": "3",
+  "expected_authority_blocked": false,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "outdated_sop"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "",
+  "synthetic": true
+}

@@ -1,0 +1,22 @@
+{
+  "id": "S032",
+  "title": "Both batch revisions approved and in force",
+  "kind": "adversarial",
+  "report_file": "PR-B032-overlapping.json",
+  "description": "Revisions 2 and 3 are both approved from 2024-12-01 with contradictory requirements.",
+  "expected_sop_code": "SOP-BAT-440",
+  "expected_revision": null,
+  "expected_authority_blocked": true,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "conflicting_revision",
+      "classification": "sop_conflict"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "Critical seeded version conflict.",
+  "synthetic": true
+}

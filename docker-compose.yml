@@ -1,0 +1,70 @@
+# ---------------------------------------------------------------------------
+# AI Manufacturing SOP Compliance Checker
+#
+#   docker compose up --build        -> http://localhost:8000
+#   docker compose down              -> stop (data volume is kept)
+#   docker compose down -v           -> stop and delete all data
+#
+# Runs fully offline by default. No API key is needed; deterministic analysis
+# requires no network access at all.
+# ---------------------------------------------------------------------------
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: sop-auditor:1.0.0
+    container_name: sop-auditor
+    restart: unless-stopped
+    ports:
+      - "${APP_PORT:-8000}:8000"
+    environment:
+      # --- Required in any real deployment ---------------------------------
+      # Generate with: python -c "import secrets; print(secrets.token_urlsafe(48))"
+      SECRET_KEY: "${SECRET_KEY:?set SECRET_KEY in .env or the environment}"
+
+      ENVIRONMENT: production
+      LOG_JSON: "true"
+
+      # Populate the synthetic demo dataset on a fresh volume. Set to false for
+      # a clean installation you intend to load real documents into.
+      SEED_ON_START: "${SEED_ON_START:-true}"
+
+      # Change this before exposing the service anywhere.
+      BOOTSTRAP_ADMIN_PASSWORD: "${BOOTSTRAP_ADMIN_PASSWORD:-Admin#12345}"
+
+      # --- Analysis ---------------------------------------------------------
+      ANALYSIS_MODE: "${ANALYSIS_MODE:-deterministic}"
+      STRICT_CITATION_VERIFICATION: "true"
+
+      # --- Optional AI provider --------------------------------------------
+      # Deterministic analysis never calls out. These only matter when
+      # ANALYSIS_MODE=llm_assisted.
+      LLM_PROVIDER: "${LLM_PROVIDER:-offline}"
+      LLM_BASE_URL: "${LLM_BASE_URL:-}"
+      LLM_API_KEY: "${LLM_API_KEY:-}"
+      LLM_MODEL: "${LLM_MODEL:-}"
+      # Safety switch: while false, no request that could be billed is sent.
+      LLM_ALLOW_PAID_REQUESTS: "${LLM_ALLOW_PAID_REQUESTS:-false}"
+      LLM_REQUEST_BUDGET_USD: "${LLM_REQUEST_BUDGET_USD:-1.0}"
+
+      # Serve the SPA from this process.
+      SERVE_FRONTEND: "true"
+      FRONTEND_DIST: /app/frontend/dist
+      VAR_DIR: /data
+    volumes:
+      # Database, uploaded documents, exports and caches.
+      - sop-data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 40s
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  sop-data:
+    driver: local

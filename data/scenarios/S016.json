@@ -1,0 +1,23 @@
+{
+  "id": "S016",
+  "title": "Required measurement performed but no value recorded",
+  "kind": "ambiguous",
+  "report_file": "PR-A016-no-value.json",
+  "description": "Torque step present without a numeric result; conformance cannot be calculated.",
+  "expected_sop_code": "SOP-ASSY-101",
+  "expected_revision": "3",
+  "expected_authority_blocked": false,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "missing_record",
+      "step": "4.3",
+      "classification": "insufficient_evidence"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "",
+  "synthetic": true
+}

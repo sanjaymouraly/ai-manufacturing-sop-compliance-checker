@@ -1,0 +1,23 @@
+{
+  "id": "S038",
+  "title": "Damage found but conditional quarantine not evidenced",
+  "kind": "ambiguous",
+  "report_file": "PR-Q038-conditional-triggered.json",
+  "description": "The trigger condition occurred but no photograph/quarantine record exists.",
+  "expected_sop_code": "SOP-QCI-610",
+  "expected_revision": "2",
+  "expected_authority_blocked": false,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "missing_step",
+      "step": "4.3",
+      "classification": "possible_deviation"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "Damage was recorded, so the quarantine step was required; its absence must reach a reviewer.",
+  "synthetic": true
+}

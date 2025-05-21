@@ -1,0 +1,22 @@
+{
+  "id": "S021",
+  "title": "Only one approved revision in force, but the SOP has unresolved conflicts",
+  "kind": "ambiguous",
+  "report_file": "PR-P021-single-revision.json",
+  "description": "Revision A governs on the execution date, yet the library holds an unresolved conflict for this SOP.",
+  "expected_sop_code": "SOP-PKG-220",
+  "expected_revision": "A",
+  "expected_authority_blocked": false,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "conflicting_revision",
+      "classification": "sop_conflict"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "",
+  "synthetic": true
+}

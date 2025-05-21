@@ -1,0 +1,22 @@
+{
+  "id": "S034",
+  "title": "Governing document has an unverifiable approval status",
+  "kind": "adversarial",
+  "report_file": "PR-C034-unknown-approval.json",
+  "description": "SOP claims 'Approved' but records no approver, so authority cannot be established.",
+  "expected_sop_code": "SOP-CLN-500",
+  "expected_revision": null,
+  "expected_authority_blocked": true,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "conflicting_revision",
+      "classification": "sop_conflict"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "",
+  "synthetic": true
+}

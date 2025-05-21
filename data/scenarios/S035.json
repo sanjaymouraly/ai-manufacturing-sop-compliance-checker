@@ -1,0 +1,17 @@
+{
+  "id": "S035",
+  "title": "Only revision expired before the execution date",
+  "kind": "adversarial",
+  "report_file": "PR-G035-expired-sop.json",
+  "description": "SOP-ASSY-105 revision 1 expired 2024-12-31; the batch ran 2025-03-01.",
+  "expected_sop_code": "SOP-ASSY-105",
+  "expected_revision": null,
+  "expected_authority_blocked": true,
+  "expected_escalation": true,
+  "expected_findings": [],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "",
+  "synthetic": true
+}

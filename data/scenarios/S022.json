@@ -1,0 +1,22 @@
+{
+  "id": "S022",
+  "title": "Two approved revisions simultaneously in force",
+  "kind": "adversarial",
+  "report_file": "PR-P022-overlapping.json",
+  "description": "Revisions A and B are both approved with overlapping windows and no supersession.",
+  "expected_sop_code": "SOP-PKG-220",
+  "expected_revision": null,
+  "expected_authority_blocked": true,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "conflicting_revision",
+      "classification": "sop_conflict"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "Critical seeded version conflict: must escalate and must not pick a revision.",
+  "synthetic": true
+}

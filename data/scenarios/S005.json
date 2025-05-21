@@ -1,0 +1,23 @@
+{
+  "id": "S005",
+  "title": "Imperial torque below tolerance after conversion",
+  "kind": "negative",
+  "report_file": "PR-A005-torque-imperial-low.json",
+  "description": "7.5 lbf-ft = 10.17 N·m, below the 11 N·m lower limit.",
+  "expected_sop_code": "SOP-ASSY-101",
+  "expected_revision": "3",
+  "expected_authority_blocked": false,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "parameter_deviation",
+      "step": "4.3",
+      "classification": "confirmed_deviation"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "",
+  "synthetic": true
+}

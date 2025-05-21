@@ -1,0 +1,21 @@
+{
+  "id": "S020",
+  "title": "Operator note contradicts the recorded step status",
+  "kind": "ambiguous",
+  "report_file": "PR-A020-contradictory-note.json",
+  "description": "Step 4.4 is marked completed while the note says it could not be completed.",
+  "expected_sop_code": "SOP-ASSY-101",
+  "expected_revision": "3",
+  "expected_authority_blocked": false,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "contradictory_statement"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "",
+  "synthetic": true
+}

@@ -1,0 +1,22 @@
+{
+  "id": "S040",
+  "title": "CSV inspection record missing the signed outcome",
+  "kind": "negative",
+  "report_file": "PR-Q040-csv-partial.csv",
+  "description": "The mandatory 'record and sign the inspection outcome' step is absent.",
+  "expected_sop_code": "SOP-QCI-610",
+  "expected_revision": "2",
+  "expected_authority_blocked": false,
+  "expected_escalation": true,
+  "expected_findings": [
+    {
+      "category": "missing_step",
+      "step": "4.6"
+    }
+  ],
+  "forbidden_categories": [],
+  "expect_zero_confirmed_deviations": false,
+  "expected_citation_validity": 1.0,
+  "notes": "",
+  "synthetic": true
+}

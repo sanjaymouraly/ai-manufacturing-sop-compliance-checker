@@ -1,0 +1,46 @@
+[project]
+name = "manufacturing-sop-ai-auditor-backend"
+authors = [{ name = "Sanjay Mouraly", email = "sanjaymouraly@users.noreply.github.com" }]
+version = "0.1.0"
+description = "Evidence-first SOP compliance analysis engine and API"
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+extend-exclude = ["alembic/versions"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "C4", "SIM", "RUF"]
+ignore = [
+    "E501",    # long lines are allowed in explanatory comments and prompts
+    "B008",    # FastAPI Depends() in defaults is the documented pattern
+    "RUF001",  # typographic characters (°, –, “) are intentional in SOP text
+    "RUF002",
+    "RUF003",
+    "SIM108",  # explicit if/else is clearer than a ternary in rule code
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101", "ARG001", "ARG002"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q --strict-markers"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::UserWarning",
+]
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+warn_unused_ignores = false
+disallow_untyped_defs = false
+exclude = ["alembic/", "tests/"]
+
+[project.urls]
+Homepage = "https://github.com/sanjaymouraly/ai-manufacturing-sop-compliance-checker"
+Repository = "https://github.com/sanjaymouraly/ai-manufacturing-sop-compliance-checker"
+Issues = "https://github.com/sanjaymouraly/ai-manufacturing-sop-compliance-checker/issues"
